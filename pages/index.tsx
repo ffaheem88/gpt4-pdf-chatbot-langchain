@@ -274,7 +274,7 @@ export default function Home() {
         </div>
         <footer className="m-auto p-4">
           <a href="https://vis.com.pk">
-            Powered by GPT4 and Trained on VIS Credit Rating Knowledge base.
+            Powered by GPT and Trained on VIS Credit Rating Knowledge base.
           </a>
         </footer>
       </Layout>
