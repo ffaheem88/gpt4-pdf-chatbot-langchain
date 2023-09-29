@@ -225,7 +225,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? 'Waiting for response...'
-                        : 'What are the main factors that are driving the the credit rating of the company?'
+                        : 'What are the main factors that are driving the credit rating of a utility company according to VIS?'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
