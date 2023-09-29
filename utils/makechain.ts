@@ -1,6 +1,7 @@
 import { ChatOpenAI } from 'langchain/chat_models/openai';
 import { PineconeStore } from 'langchain/vectorstores/pinecone';
 import { ConversationalRetrievalQAChain } from 'langchain/chains';
+import { ConversationChain } from "langchain/chains";
 
 const CONDENSE_TEMPLATE = `Given the following conversation and a follow up question, rephrase the follow up question to be a standalone question.
 
@@ -21,15 +22,16 @@ Helpful answer in markdown:`;
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new ChatOpenAI({
     temperature: 0, // increase temepreature to get more creative answers
-    modelName: 'gpt-3.5-turbo', //change this to gpt-4 if you have access
+    modelName: 'gpt-4',
+           //change this to gpt-4 if you have access
   });
-
+  
   const chain = ConversationalRetrievalQAChain.fromLLM(
     model,
-    vectorstore.asRetriever(),
+    vectorstore.asRetriever(10),
     {
-      qaTemplate: QA_TEMPLATE,
-      questionGeneratorTemplate: CONDENSE_TEMPLATE,
+     // qaTemplate: QA_TEMPLATE,
+     // questionGeneratorTemplate: CONDENSE_TEMPLATE,
       returnSourceDocuments: true, //The number of source documents returned is 4 by default
     },
   );

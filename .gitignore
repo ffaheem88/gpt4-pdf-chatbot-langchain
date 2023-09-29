@@ -19,6 +19,14 @@
 .DS_Store
 *.pem
 
+#pdfs
+/pdfs
+/doc22
+/docs
+/moodys
+/moodyprs
+/methpacra
+
 # debug
 npm-debug.log*
 yarn-debug.log*

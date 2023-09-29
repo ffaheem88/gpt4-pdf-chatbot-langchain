@@ -224,6 +224,35 @@
 .footer a:hover {
   opacity: 0.8;
 }
+.dataSourceLabel {
+  font-weight: 600; /* Makes the label slightly bold */
+  margin-right: 8px; /* Some spacing between label and dropdown */
+  display: inline-block; /* To keep it inline with the dropdown */
+  vertical-align: middle; /* To vertically align with the dropdown */
+}
+
+.selectDropdown {
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  width: 75vw;
+  border-radius: 0.5rem;
+  border: 1px solid #d9d9e3;
+  background: #ffffff;
+  color: #000;
+  outline: none;
+  margin-bottom: 1rem; /* space between dropdown and textarea */
+}
+
+.selectDropdown:focus {
+  outline: none;
+  border-color: #6b7280;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.5);
+}
+
+.selectDropdown:disabled {
+  opacity: 0.5;
+}
+
 
 /* Mobile optimization */
 @media (max-width: 600px) {
