@@ -41,9 +41,11 @@ async function longRunning(sanitizedQuestion: string, history: string[],req: { b
       chat_history: []//pastMessages
     });
 
+    return response;
+
     console.log('response', response);
   }
 
 
-  export default defer(longRunning);
+  export default longRunning;
 
