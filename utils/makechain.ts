@@ -22,7 +22,7 @@ Helpful answer in markdown:`;
 export const makeChain = (vectorstore: PineconeStore) => {
   const model = new ChatOpenAI({
     temperature: 0, // increase temepreature to get more creative answers
-    modelName: 'gpt-3.5-turbo-16k',
+    modelName: 'gpt-4',
            //change this to gpt-4 if you have access
   });
   
@@ -30,8 +30,8 @@ export const makeChain = (vectorstore: PineconeStore) => {
     model,
     vectorstore.asRetriever(10),
     {
-     // qaTemplate: QA_TEMPLATE,
-     // questionGeneratorTemplate: CONDENSE_TEMPLATE,
+      //qaTemplate: QA_TEMPLATE,
+      //questionGeneratorTemplate: CONDENSE_TEMPLATE,
       returnSourceDocuments: true, //The number of source documents returned is 4 by default
     },
   );

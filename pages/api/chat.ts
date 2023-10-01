@@ -59,7 +59,7 @@ export default async function handler(
     sanitizedQuestion += historychat + "Human: " + sanitizedQuestion + "\nAI:";
     const response = await chain.call({
       question: sanitizedQuestion,
-      chat_history: []
+      chat_history: []//pastMessages
     });
 
     console.log('response', response);
